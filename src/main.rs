@@ -22,7 +22,8 @@ fn pull_url(requested_title: &String) -> Result<(), Box<dyn Error>> {
         ('$', "%24"), 
         ('@', "%40"), 
         (' ', "+") // must come last, or at least before the + check
-    ]);
+    ]); 
+    
     let mut sanitized_search: String = requested_title.clone();
     for i in 1..invalids.len() {
         if sanitized_search.contains(invalids[i].0) {
